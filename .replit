@@ -1,0 +1,2 @@
+modules = ["nodejs-20"]
+run = "npm test"
