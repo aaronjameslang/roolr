@@ -1,5 +1,5 @@
 modules = ["nodejs-20"]
-run = "npm test"
+run = "prettier --write . && npm test"
 
 [[ports]]
 localPort = 3000

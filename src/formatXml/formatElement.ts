@@ -7,8 +7,7 @@ import { formatEmptyTag } from "./formatEmptyTag";
 export function formatElement(
   element: XmlElement,
 ): string {
-  const { children } =
-    element;
+  const { children } = element;
   if (!children?.length)
     return formatEmptyTag(element);
   return [

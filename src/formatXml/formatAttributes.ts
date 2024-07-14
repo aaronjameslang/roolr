@@ -5,8 +5,7 @@ export function formatAttributes(
   attributes?: AttributeMap,
 ) {
   if (!attributes) return [];
-  return Object.keys(attributes)
-    .map((name) =>
-      formatAttribute(name, attributes[name]),
-    );
+  return Object.keys(attributes).map((name) =>
+    formatAttribute(name, attributes[name]),
+  );
 }
