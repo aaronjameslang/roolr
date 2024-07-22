@@ -5,7 +5,10 @@ export function formatOpeningTag(
   element: XmlElement,
 ) {
   const { name, attributes } = element;
-  if (Object.keys(attributes ?? {}).length)
-    return `<${name}>`;
-  return `<${name} ${formatAttributes(attributes)}>`;
+  return (
+    [
+      `<${name}`,
+      ...formatAttributes(attributes),
+    ].join(" ") + ">"
+  );
 }

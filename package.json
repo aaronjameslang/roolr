@@ -14,5 +14,8 @@
     "serve": "^14.2.3",
     "ts-jest": "^29.2.2",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "yaml": "^2.4.5"
   }
 }

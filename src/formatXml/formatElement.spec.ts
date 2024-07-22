@@ -28,7 +28,7 @@ describe("formatElement", () => {
     };
     const actual = formatElement(element);
     expect(actual).toMatchInlineSnapshot(
-      `"<div ><br /></div>"`,
+      `"<div><br /></div>"`,
     );
   });
   it("formats parent tag with text child", () => {
@@ -39,7 +39,7 @@ describe("formatElement", () => {
     };
     const actual = formatElement(element);
     expect(actual).toMatchInlineSnapshot(
-      `"<p>Hello</p>"`,
+      `"<p id="my-paragraph">Hello</p>"`,
     );
   });
 });

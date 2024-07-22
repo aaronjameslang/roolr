@@ -1,6 +1,6 @@
 export function formatAttribute(
   name: string,
-  value: string,
+  value: string | number,
 ) {
   return `${name}="${value}"`;
 }
