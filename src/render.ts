@@ -1,11 +1,12 @@
 import { Specification } from "./Specification";
 import { formatElement } from "./formatXml/formatElement";
+import { createScaleBar } from "./createScaleBar";
 
 export function render(spec: Specification) {
   const svgWidth = spec.length * 2;
-  const svgHeight = spec.width * 2;
+  const svgHeight = spec.width * 2 + 30;
   const offsetX = (svgWidth - spec.length) / 2;
-  const offsetY = (svgHeight - spec.width) / 2;
+  const offsetY = (svgHeight - spec.width - 30) / 2;
 
   const gradient = {
     name: "linearGradient",
@@ -62,6 +63,8 @@ export function render(spec: Specification) {
     },
   };
 
+  const scaleBarGroup = createScaleBar(svgWidth, svgHeight);
+
   const root = {
     name: "svg",
     attributes: {
@@ -69,7 +72,7 @@ export function render(spec: Specification) {
       height: svgHeight,
       xmlns: "http://www.w3.org/2000/svg",
     },
-    children: [defs, background, outline],
+    children: [defs, background, outline, scaleBarGroup],
   };
   return formatElement(root);
 }
