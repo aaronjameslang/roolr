@@ -1,3 +1,3 @@
 export type AttributeMap = {
-  [key: string]: string | number;
+  [key: string]: string | number| undefined;
 };

@@ -10,7 +10,6 @@ export function ScaleBar({ svgWidth, svgHeight }: ScaleBarProps): XmlElement {
   const scaleBarLength = 20; // 10mm at 2px/mm scale
   const scaleBarX = (svgWidth - scaleBarLength) / 2;
   const scaleBarY = svgHeight - 22;
-
   return (
     <g>
       <rect

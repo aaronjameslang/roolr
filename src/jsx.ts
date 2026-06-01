@@ -1,24 +1,22 @@
 import { XmlElement } from "./formatXml/XmlElement";
 
+type ComponentFunction = (props: Record<string, unknown>) => XmlElement;
+
 export function h(
-  name: string | Function,
+  name: string | ComponentFunction,
   attributes: Record<string, string | number | undefined> | null,
-  ...children: (string | any)[]
+  ...children: (string | XmlElement)[]
 ): XmlElement {
   // Handle component functions
   if (typeof name === "function") {
     return name({ ...attributes, children });
   }
 
-  const element: any = {
+  const element: XmlElement = {
     name,
   };
 
-  if (attributes) {
-    element.attributes = Object.fromEntries(
-      Object.entries(attributes).filter(([_, value]) => value !== undefined)
-    );
-  }
+  element.attributes = attributes??undefined;
 
   if (children.length > 0) {
     element.children = children.flat();
@@ -28,9 +26,10 @@ export function h(
 }
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
     interface IntrinsicElements {
-      [key: string]: any;
+      [key: string]: unknown;
     }
   }
 }

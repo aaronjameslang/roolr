@@ -3,10 +3,9 @@ import { h } from "../jsx";
 interface BackgroundProps {
   width: number;
   height: number;
-  children?: any[];
 }
 
-export function Background({ width, height, children }: BackgroundProps) {
+export function Background({ width, height }: BackgroundProps) {
   return (
     <rect
       x={0}

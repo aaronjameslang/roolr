@@ -1,6 +1,9 @@
 export function formatAttribute(
   name: string,
-  value: string | number,
+  value: string | number | undefined,
 ) {
+  if (value === undefined) {
+    return "";
+  }
   return `${name}="${value}"`;
 }

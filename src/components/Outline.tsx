@@ -5,10 +5,9 @@ interface OutlineProps {
   spec: Specification;
   offsetX: number;
   offsetY: number;
-  children?: any[];
 }
 
-export function Outline({ spec, offsetX, offsetY, children }: OutlineProps) {
+export function Outline({ spec, offsetX, offsetY }: OutlineProps) {
   return (
     <rect
       x={offsetX}

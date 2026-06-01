@@ -1,4 +1,3 @@
-import { formatAttributes } from "./formatAttributes";
 import { XmlElement } from "./XmlElement";
 import { formatOpeningTag } from "./formatOpeningTag";
 import { formatClosingTag } from "./formatClosingTag";

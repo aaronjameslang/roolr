@@ -1,11 +1,7 @@
 import { h } from "../jsx";
 import { Gradient } from "./Gradient";
 
-interface DefsProps {
-  children?: any[];
-}
-
-export function Defs({ children }: DefsProps = {}) {
+export function Defs() {
   return (
     <defs>
       <Gradient />
