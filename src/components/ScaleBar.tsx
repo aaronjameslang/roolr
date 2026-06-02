@@ -6,47 +6,51 @@ interface ScaleBarProps {
   svgHeight: number;
 }
 
-export function ScaleBar({ svgWidth, svgHeight }: ScaleBarProps): XmlElement {
-  const scaleBarLength = 20; // 10mm at 2px/mm scale
-  const scaleBarX = (svgWidth - scaleBarLength) / 2;
-  const scaleBarY = svgHeight - 22;
+// eslint-disable-next-line max-lines-per-function
+export function ScaleBar({
+  svgWidth,
+  svgHeight,
+}: ScaleBarProps): XmlElement {
+  const len = 20;
+  const x = (svgWidth - len) / 2;
+  const y = svgHeight - 22;
   return (
     <g>
       <rect
-        x={scaleBarX - 5}
-        y={scaleBarY - 8}
-        width={scaleBarLength + 10}
+        x={x - 5}
+        y={y - 8}
+        width={len + 10}
         height={20}
         fill="white"
         opacity="0.8"
       />
       <line
-        x1={scaleBarX}
-        y1={scaleBarY}
-        x2={scaleBarX + scaleBarLength}
-        y2={scaleBarY}
+        x1={x}
+        y1={y}
+        x2={x + len}
+        y2={y}
         stroke="black"
         stroke-width={2}
       />
       <line
-        x1={scaleBarX}
-        y1={scaleBarY - 3}
-        x2={scaleBarX}
-        y2={scaleBarY + 3}
+        x1={x}
+        y1={y - 3}
+        x2={x}
+        y2={y + 3}
         stroke="black"
         stroke-width={2}
       />
       <line
-        x1={scaleBarX + scaleBarLength}
-        y1={scaleBarY - 3}
-        x2={scaleBarX + scaleBarLength}
-        y2={scaleBarY + 3}
+        x1={x + len}
+        y1={y - 3}
+        x2={x + len}
+        y2={y + 3}
         stroke="black"
         stroke-width={2}
       />
       <text
-        x={scaleBarX + scaleBarLength / 2}
-        y={scaleBarY + 13}
+        x={x + len / 2}
+        y={y + 13}
         text-anchor="middle"
         font-size="10"
         fill="black"

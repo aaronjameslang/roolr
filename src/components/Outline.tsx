@@ -7,7 +7,11 @@ interface OutlineProps {
   offsetY: number;
 }
 
-export function Outline({ spec, offsetX, offsetY }: OutlineProps) {
+export function Outline({
+  spec,
+  offsetX,
+  offsetY,
+}: OutlineProps) {
   return (
     <rect
       x={offsetX}

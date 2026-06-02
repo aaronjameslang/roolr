@@ -10,7 +10,8 @@ export function render(spec: Specification) {
   const svgWidth = spec.length * 2;
   const svgHeight = spec.width * 2 + 30;
   const offsetX = (svgWidth - spec.length) / 2;
-  const offsetY = (svgHeight - spec.width - 30) / 2;
+  const offsetY =
+    (svgHeight - spec.width - 30) / 2;
 
   const root = {
     name: "svg",
@@ -21,9 +22,19 @@ export function render(spec: Specification) {
     },
     children: [
       <Defs />,
-      <Background width={svgWidth} height={svgHeight} />,
-      <Outline spec={spec} offsetX={offsetX} offsetY={offsetY} />,
-      <ScaleBar svgWidth={svgWidth} svgHeight={svgHeight} />,
+      <Background
+        width={svgWidth}
+        height={svgHeight}
+      />,
+      <Outline
+        spec={spec}
+        offsetX={offsetX}
+        offsetY={offsetY}
+      />,
+      <ScaleBar
+        svgWidth={svgWidth}
+        svgHeight={svgHeight}
+      />,
     ],
   };
   return formatElement(root);

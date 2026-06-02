@@ -5,7 +5,10 @@ interface BackgroundProps {
   height: number;
 }
 
-export function Background({ width, height }: BackgroundProps) {
+export function Background({
+  width,
+  height,
+}: BackgroundProps) {
   return (
     <rect
       x={0}

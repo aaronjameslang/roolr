@@ -10,10 +10,12 @@ export default [
         project: "./tsconfig.json",
       },
     },
-    plugins: { "@typescript-eslint": tsPlugin },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+    },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      "complexity": ["error"],
+      complexity: ["error"],
       "max-depth": ["error"],
       "max-len": ["error"],
       "max-lines": ["error"],
@@ -23,6 +25,9 @@ export default [
     },
   },
   {
-    ignores: ["node_modules/**", "coverage/**"],
+    ignores: [
+      "node_modules/**",
+      "coverage/**",
+    ],
   },
 ];

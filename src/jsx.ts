@@ -1,10 +1,15 @@
 import { XmlElement } from "./formatXml/XmlElement";
 
-type ComponentFunction = (props: Record<string, unknown>) => XmlElement;
+type ComponentFunction = (
+  props: Record<string, unknown>,
+) => XmlElement;
 
 export function h(
   name: string | ComponentFunction,
-  attributes: Record<string, string | number | undefined> | null,
+  attributes: Record<
+    string,
+    string | number | undefined
+  > | null,
   ...children: (string | XmlElement)[]
 ): XmlElement {
   // Handle component functions
@@ -16,7 +21,7 @@ export function h(
     name,
   };
 
-  element.attributes = attributes??undefined;
+  element.attributes = attributes ?? undefined;
 
   if (children.length > 0) {
     element.children = children.flat();
