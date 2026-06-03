@@ -1,2 +1,9 @@
 length: 150
 width: 25.4
+axes:
+  - scale: 10
+    side: top
+    tickHeight: 5
+  - scale: 25.4
+    side: bottom
+    tickHeight: 5

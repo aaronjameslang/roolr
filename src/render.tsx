@@ -5,6 +5,7 @@ import { Defs } from "./components/Defs";
 import { Background } from "./components/Background";
 import { Outline } from "./components/Outline";
 import { ScaleBar } from "./components/ScaleBar";
+import { Ticks } from "./components/Ticks";
 
 export function render(spec: Specification) {
   const svgWidth = spec.length * 2;
@@ -30,6 +31,14 @@ export function render(spec: Specification) {
         spec={spec}
         offsetX={offsetX}
         offsetY={offsetY}
+      />,
+      <Ticks
+        axes={spec.axes ?? []}
+        length={spec.length}
+        offsetX={offsetX}
+        offsetY={offsetY}
+        rulerHeight={spec.width}
+        kerf={spec.kerf ?? 3}
       />,
       <ScaleBar
         svgWidth={svgWidth}

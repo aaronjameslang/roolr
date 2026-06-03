@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:update": "rm ./examples/*.svg && jest --updateSnapshot",
     "lint": "eslint src",
     "cpd": "jscpd",
     "typecheck": "tsc --noEmit",
